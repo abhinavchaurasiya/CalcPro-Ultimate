@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CalcPro Ultimate — advanced calculator and reliable currency converter.">
+  <title>CalcPro Ultimate</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="orb orb-a"></div><div class="orb orb-b"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#"><b>∑</b><span>Calc<span>Pro</span></span></a>
+    <button id="themeBtn" class="round-btn" title="Toggle theme" aria-label="Toggle theme">☀</button>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div>
+        <span class="eyebrow">ULTIMATE CALCULATION SUITE</span>
+        <h1>Calculate smarter.<br><em>Convert instantly.</em></h1>
+        <p>Advanced scientific calculations, persistent history, memory and a reliable currency conversion workspace.</p>
+      </div>
+      <div class="hero-badge"><i></i> Converter ready</div>
+    </section>
+
+    <nav class="tabs" aria-label="Calculator modes">
+      <button class="tab active" data-mode="calculator">🧮 Advanced Calculator</button>
+      <button class="tab" data-mode="currency">💱 Currency Converter</button>
+    </nav>
+
+    <section id="calculatorMode" class="workspace">
+      <div class="calculator">
+        <div class="calc-top">
+          <div><span class="eyebrow">SCIENTIFIC MODE</span><span class="mode-dot">● Ready</span></div>
+          <button id="clearHistory" class="link-btn">Clear history</button>
+        </div>
+
+        <div class="display">
+          <div id="expression" class="expression"></div>
+          <div id="result" class="result">0</div>
+        </div>
+
+        <div class="memory-row">
+          <button data-memory="clear">MC</button><button data-memory="recall">MR</button>
+          <button data-memory="add">M+</button><button data-memory="subtract">M−</button>
+          <button data-action="backspace">⌫</button>
+        </div>
+
+        <div class="scientific-row">
+          <button data-fn="sin">sin</button><button data-fn="cos">cos</button>
+          <button data-fn="tan">tan</button><button data-fn="sqrt">√</button>
+          <button data-fn="log">log</button><button data-fn="ln">ln</button>
+          <button data-fn="square">x²</button><button data-fn="reciprocal">1/x</button>
+        </div>
+
+        <div id="keypad" class="keypad">
+          <button class="fn" data-action="clear">AC</button>
+          <button class="fn" data-action="sign">+/−</button>
+          <button class="fn" data-action="percent">%</button>
+          <button class="op" data-value="÷">÷</button>
+
+          <button data-value="(">(</button><button data-value=")">)</button>
+          <button data-value="π">π</button><button class="op" data-value="×">×</button>
+
+          <button data-value="7">7</button><button data-value="8">8</button><button data-value="9">9</button><button class="op" data-value="−">−</button>
+          <button data-value="4">4</button><button data-value="5">5</button><button data-value="6">6</button><button class="op" data-value="+">+</button>
+          <button data-value="1">1</button><button data-value="2">2</button><button data-value="3">3</button><button class="equals" data-action="equals">=</button>
+          <button class="zero" data-value="0">0</button><button data-value=".">.</button>
+        </div>
+      </div>
+
+      <aside class="history">
+        <div class="panel-title"><span class="eyebrow">RECENT</span><h2>History</h2></div>
+        <div id="historyList" class="history-list"></div>
+      </aside>
+    </section>
+
+    <section id="currencyMode" class="currency" hidden>
+      <div class="currency-card">
+        <div class="currency-head">
+          <div><span class="eyebrow">CURRENCY</span><h2>Currency Converter</h2></div>
+          <span id="rateStatus" class="rate-status">Ready</span>
+        </div>
+
+        <div class="converter-grid">
+          <div class="money-box">
+            <label for="amount">Amount</label>
+            <input id="amount" type="number" min="0" step="any" value="1" inputmode="decimal">
+            <select id="fromCurrency" aria-label="From currency"></select>
+          </div>
+
+          <button id="swapBtn" class="swap" title="Swap currencies" aria-label="Swap currencies">⇄</button>
+
+          <div class="money-box">
+            <label for="converted">Converted amount</label>
+            <output id="converted">—</output>
+            <select id="toCurrency" aria-label="To currency"></select>
+          </div>
+        </div>
+
+        <button id="convertBtn" class="convert-btn">Convert now <span>→</span></button>
+        <div id="rateInfo" class="rate-info">Rates are fetched when you convert.</div>
+      </div>
+
+      <div class="currency-features">
+        <div><b>↻</b><strong>Live rate</strong><span>Uses a public exchange-rate endpoint.</span></div>
+        <div><b>⇄</b><strong>Quick swap</strong><span>Reverse the selected currencies instantly.</span></div>
+        <div><b>✓</b><strong>Fallback</strong><span>Shows a clear message if the network is unavailable.</span></div>
+      </div>
+    </section>
+  </main>
+
+  <footer><span>CalcPro Ultimate</span><i>•</i> HTML · CSS · JavaScript</footer>
+  <script src="script.js"></script>
+</body>
+</html>
